@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:meal_planner/core/utility/widgets/shimmer_meal_card.dart';
+import 'package:meal_planner/core/utility/widgets/shimmer/shimmer_meal_card.dart';
 
 class ShimmerGridView extends StatelessWidget {
   const ShimmerGridView({super.key});

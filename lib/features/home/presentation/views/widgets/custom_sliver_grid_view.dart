@@ -26,7 +26,7 @@ class CustomSliverGridView extends StatelessWidget {
           meal: meal[index],
           style1: Styles.textStyleMedium14,
           style2: Styles.textStyleregular12.copyWith(color: Color(0xff878787)),
-          height: MediaQuery.sizeOf(context).height * .17,
+          height: 120,
           right: 6,
           bottom: 4,
         );

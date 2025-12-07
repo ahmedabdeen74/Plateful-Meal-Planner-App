@@ -110,6 +110,8 @@ class MealCard extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: AppPadding.tinySmallPadding),
             child: Text(
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
               meal.strMeal?.isNotEmpty == true ? meal.strMeal! : "Unknown Meal",
               style: style1,
             ),

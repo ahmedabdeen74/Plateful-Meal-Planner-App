@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:meal_planner/core/utility/styles.dart';
-import 'package:meal_planner/core/utility/widgets/shimmer_card_swiper.dart';
-import 'package:meal_planner/core/utility/widgets/shimmer_grid_view.dart';
-import 'package:meal_planner/core/utility/widgets/shimmer_meal_card.dart';
+import 'package:meal_planner/core/utility/widgets/shimmer/shimmer_card_swiper.dart';
+import 'package:meal_planner/core/utility/widgets/shimmer/shimmer_grid_view.dart';
+import 'package:meal_planner/core/utility/widgets/shimmer/shimmer_meal_card.dart';
 import 'package:meal_planner/features/home/presentation/views/widgets/custom_app_bar.dart';
 
 class ShimmerHomeView extends StatefulWidget {

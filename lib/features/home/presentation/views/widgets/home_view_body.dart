@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meal_planner/config/app_helper/app_gaps.dart';
 import 'package:meal_planner/config/app_helper/app_padding.dart';
 import 'package:meal_planner/core/utility/styles.dart';
-import 'package:meal_planner/core/utility/widgets/shimmer_home_view.dart';
+import 'package:meal_planner/core/utility/widgets/shimmer/shimmer_home_view.dart';
 import 'package:meal_planner/features/home/presentation/view_models/fetch_meals_cubit/fetch_meals_cubit.dart';
 import 'package:meal_planner/features/home/presentation/views/widgets/custom_app_bar.dart';
 import 'package:meal_planner/features/home/presentation/views/widgets/custom_card_swiper.dart';
@@ -24,13 +24,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
   @override
   void initState() {
     super.initState();
-    final cubit = BlocProvider.of<FetchMealsCubit>(context);
-
-     cubit.fetchMealsFromCache();
-
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      _refreshIndicatorKey.currentState?.show();
-    });
+    _refreshData();
   }
 
   Future<void> _refreshData() async {

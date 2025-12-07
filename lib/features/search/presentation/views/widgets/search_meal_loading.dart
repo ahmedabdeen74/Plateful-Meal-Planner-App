@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:meal_planner/core/utility/widgets/shimmer_custom_search_result_item.dart';
-import 'package:meal_planner/core/utility/widgets/shimmer_search_result_item.dart';
+import 'package:meal_planner/core/utility/widgets/shimmer/shimmer_custom_search_result_item.dart';
+import 'package:meal_planner/core/utility/widgets/shimmer/shimmer_search_result_item.dart';
 import 'package:meal_planner/features/search/presentation/views/widgets/custom_text_field.dart';
 import 'package:meal_planner/features/search/presentation/views/widgets/search_view_app_bar.dart';
 

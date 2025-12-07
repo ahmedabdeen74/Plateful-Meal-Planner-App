@@ -1,11 +1,12 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:meal_planner/core/utility/use_case/use_case.dart';
 import 'package:meal_planner/features/home/data/models/meal_model/meal.dart';
 import 'package:meal_planner/features/home/domain/use_case/fetch_meal_details.dart';
 
 part 'fetch_meal_details_state.dart';
 class FetchMealDetailsCubit extends Cubit<FetchMealDetailsState> {
-  final FetchMealDetailsUseCase useCase;
+  final UseCase useCase;
 
   FetchMealDetailsCubit(this.useCase)
     : super(const FetchMealDetailsState(status: FetchMealDetailsStatus.initial));

@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:meal_planner/core/utility/app_router.dart';
 import 'package:meal_planner/core/utility/area_assets.dart';
 import 'package:meal_planner/core/utility/assets_category.dart';
-import 'package:meal_planner/core/utility/widgets/shimmer_custom_search_result_item.dart';
+import 'package:meal_planner/core/utility/widgets/shimmer/shimmer_custom_search_result_item.dart';
 import 'package:meal_planner/features/explore/presentation/view_models/fetch_area/fetch_area_cubit.dart';
 import 'package:meal_planner/features/explore/presentation/view_models/fetch_category/fetch_category_cubit.dart';
 import 'package:meal_planner/features/explore/presentation/view_models/filter_cubits/fetch_filter_area_cubit.dart';

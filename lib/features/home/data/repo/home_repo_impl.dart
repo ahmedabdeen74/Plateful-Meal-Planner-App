@@ -34,10 +34,7 @@ class HomeRepoImpl implements HomeRepo {
     return await homeRemoteDataSource.fetchMeals(count: count);
   }
 
-  @override
-  List<Meal> fetchMealsFromCache() {
-    return homeLocalDataSource.fetchMeals();
-  }
+  
 }
 
 

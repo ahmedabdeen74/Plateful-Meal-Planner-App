@@ -1,8 +1,11 @@
 import 'package:get_it/get_it.dart';
 import 'package:meal_planner/core/network/api_service.dart';
+import 'package:meal_planner/core/utility/use_case/use_case.dart';
 import 'package:meal_planner/features/home/data/data_sources/local/home_local_data_source.dart';
 import 'package:meal_planner/features/home/data/data_sources/remote/home_remote_Data_source.dart';
+import 'package:meal_planner/features/home/data/models/meal_model/meal.dart';
 import 'package:meal_planner/features/home/data/repo/home_repo_impl.dart';
+import 'package:meal_planner/features/home/domain/repo/home_repo.dart';
 import 'package:meal_planner/features/home/domain/use_case/fetch_meal_details.dart';
 import 'package:meal_planner/features/home/domain/use_case/fetch_meals_use_case.dart';
 import 'package:meal_planner/features/home/presentation/view_models/fetch_meal_details_cubit/fetch_meal_details_cubit.dart';
@@ -19,26 +22,30 @@ void injectHome() {
     () => HomeRemoteDataSourceImpl(apiService: getIt<ApiService>()),
   );
 
-  // ✅ Repository
-  getIt.registerLazySingleton<HomeRepoImpl>(
+  getIt.registerLazySingleton<HomeRepo>(
     () => HomeRepoImpl(
-      homeLocalDataSource: getIt<HomeLocalDataSource>(),
-      homeRemoteDataSource: getIt<HomeRemoteDataSource>(),
+      homeLocalDataSource: getIt(),
+      homeRemoteDataSource: getIt(),
     ),
   );
 
-  // ✅ UseCases
-  getIt.registerLazySingleton<FetchMealsUseCase>(
-    () => FetchMealsUseCase(homeRepo: getIt<HomeRepoImpl>()),
-  );
-  getIt.registerLazySingleton<FetchMealDetailsUseCase>(
-    () => FetchMealDetailsUseCase(homeRepo: getIt<HomeRepoImpl>()),
+  // Register abstract use case type
+  getIt.registerLazySingleton<UseCase<List<Meal>, int>>(
+    () => FetchMealsUseCase(homeRepo: getIt()),
   );
 
-  // ✅ Cubits
-  getIt.registerFactory(() => FetchMealsCubit(getIt<FetchMealsUseCase>()));
+  // Register details use case
+  getIt.registerLazySingleton<UseCase<Meal, String>>(
+    () => FetchMealDetailsUseCase(homeRepo: getIt()),
+  );
+
+  // Cubits
   getIt.registerFactory(
-    () => FetchMealDetailsCubit(getIt<FetchMealDetailsUseCase>()),
+    () => FetchMealsCubit(getIt<UseCase<List<Meal>, int>>()),
+  );
+
+  getIt.registerFactory(
+    () => FetchMealDetailsCubit(getIt<UseCase<Meal, String>>()),
   );
 }
 

@@ -29,6 +29,7 @@ class SimpleBlocObserver implements BlocObserver {
 
   @override
   void onTransition(Bloc bloc, Transition transition) {
+    debugPrint('transition : $transition');
     // TODO: implement onTransition
   }
 }

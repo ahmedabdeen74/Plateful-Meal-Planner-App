@@ -4,7 +4,9 @@ import 'package:meal_planner/config/app_helper/app_gaps.dart';
 import 'package:meal_planner/config/app_helper/app_padding.dart';
 import 'package:meal_planner/core/utility/styles.dart';
 import 'package:meal_planner/core/utility/widgets/shimmer/shimmer_home_view.dart';
-import 'package:meal_planner/features/home/presentation/view_models/fetch_meals_cubit/fetch_meals_cubit.dart';
+import 'package:meal_planner/features/home/presentation/bloc/fetch_meals/fetch_meals_bloc.dart';
+import 'package:meal_planner/features/home/presentation/bloc/fetch_meals/fetch_meals_event.dart';
+import 'package:meal_planner/features/home/presentation/bloc/fetch_meals/fetch_meals_state.dart';
 import 'package:meal_planner/features/home/presentation/views/widgets/custom_app_bar.dart';
 import 'package:meal_planner/features/home/presentation/views/widgets/custom_card_swiper.dart';
 import 'package:meal_planner/features/home/presentation/views/widgets/custom_sliver_grid_view.dart';
@@ -28,12 +30,12 @@ class _HomeViewBodyState extends State<HomeViewBody> {
   }
 
   Future<void> _refreshData() async {
-    await BlocProvider.of<FetchMealsCubit>(context).fetchMeals(count: 8);
+    context.read<FetchMealsBloc>().add(FetchMealsRequested(count: 8));
   }
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<FetchMealsCubit, FetchMealsState>(
+    return BlocBuilder<FetchMealsBloc, FetchMealsState>(
       builder: (context, state) {
         if (state.status == FetchMealsStatus.loading) {
           return ShimmerHomeView();

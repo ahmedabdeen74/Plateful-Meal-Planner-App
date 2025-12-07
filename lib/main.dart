@@ -10,6 +10,7 @@ import 'package:meal_planner/features/calendar/data/local/calendar/calendar_cubi
 import 'package:meal_planner/features/calendar/data/models/calendar_meal.dart';
 import 'package:meal_planner/features/favourite/data/local/Favourite/add_meal_cubit.dart';
 import 'package:meal_planner/features/home/data/models/meal_model/meal.dart';
+import 'package:meal_planner/features/home/presentation/bloc/fetch_meals/fetch_meals_bloc.dart';
 import 'package:meal_planner/features/home/presentation/view_models/fetch_meal_details_cubit/fetch_meal_details_cubit.dart';
 import 'package:meal_planner/features/home/presentation/view_models/fetch_meals_cubit/fetch_meals_cubit.dart';
 import 'package:meal_planner/firebase_options.dart';
@@ -37,7 +38,8 @@ class MealPlanner extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (_) => getIt<FetchMealsCubit>()),
+        BlocProvider(create: (_) => getIt<FetchMealsBloc>()),
+      //  BlocProvider(create: (_) => getIt<FetchMealsCubit>()),
         BlocProvider(create: (_) => getIt<FetchMealDetailsCubit>()),
         BlocProvider(create: (_) => AddMealCubit()),
         BlocProvider(create: (_) => CalendarCubit()),

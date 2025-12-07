@@ -42,9 +42,3 @@ class ServerFailure extends Failure {
     }
   }
 }
-class CacheFailure extends Failure {
-  CacheFailure({required super.errMessage});
-}
-class NetworkFailure extends Failure {
-  NetworkFailure({required super.errMessage});
-}

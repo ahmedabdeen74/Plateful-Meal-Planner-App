@@ -1,7 +1,7 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:meal_planner/core/utility/errors/failures.dart';
-import 'package:meal_planner/features/home/presentation/view_models/fetch_meals_cubit/fetch_meals_cubit.dart';
+import 'package:meal_planner/features/home/presentation/cubits/fetch_meals_cubit/fetch_meals_cubit.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:meal_planner/features/home/data/models/meal_model/meal.dart';
 import 'package:meal_planner/core/utility/use_case/use_case.dart';

@@ -9,8 +9,8 @@ import 'package:meal_planner/features/home/domain/repo/home_repo.dart';
 import 'package:meal_planner/features/home/domain/use_case/fetch_meal_details.dart';
 import 'package:meal_planner/features/home/domain/use_case/fetch_meals_use_case.dart';
 import 'package:meal_planner/features/home/presentation/bloc/fetch_meals/fetch_meals_bloc.dart';
-import 'package:meal_planner/features/home/presentation/view_models/fetch_meal_details_cubit/fetch_meal_details_cubit.dart';
-import 'package:meal_planner/features/home/presentation/view_models/fetch_meals_cubit/fetch_meals_cubit.dart';
+import 'package:meal_planner/features/home/presentation/cubits/fetch_meal_details_cubit/fetch_meal_details_cubit.dart';
+import 'package:meal_planner/features/home/presentation/cubits/fetch_meals_cubit/fetch_meals_cubit.dart';
 
 final getIt = GetIt.instance;
 

@@ -11,7 +11,7 @@ class FetchMealDetailsCubit extends Cubit<FetchMealDetailsState> {
   FetchMealDetailsCubit(this.useCase)
     : super(const FetchMealDetailsState(status: FetchMealDetailsStatus.initial));
 
-  fetchMealDetails({required String id}) async {
+  Future<void> fetchMealDetails({required String id}) async {
     emit(state.copyWith(status: FetchMealDetailsStatus.loading));
 
     final result = await useCase.call(id);

@@ -11,8 +11,8 @@ import 'package:meal_planner/features/calendar/data/models/calendar_meal.dart';
 import 'package:meal_planner/features/favourite/data/local/Favourite/add_meal_cubit.dart';
 import 'package:meal_planner/features/home/data/models/meal_model/meal.dart';
 import 'package:meal_planner/features/home/presentation/bloc/fetch_meals/fetch_meals_bloc.dart';
-import 'package:meal_planner/features/home/presentation/view_models/fetch_meal_details_cubit/fetch_meal_details_cubit.dart';
-import 'package:meal_planner/features/home/presentation/view_models/fetch_meals_cubit/fetch_meals_cubit.dart';
+import 'package:meal_planner/features/home/presentation/cubits/fetch_meal_details_cubit/fetch_meal_details_cubit.dart';
+import 'package:meal_planner/features/home/presentation/cubits/fetch_meals_cubit/fetch_meals_cubit.dart';
 import 'package:meal_planner/firebase_options.dart';
 import 'package:meal_planner/simple_bloc_observer.dart';
 

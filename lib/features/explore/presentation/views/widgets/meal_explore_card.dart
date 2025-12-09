@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meal_planner/core/utility/styles.dart';
 import 'package:meal_planner/core/utility/widgets/mealdetailsbottomsheet.dart';
 import 'package:meal_planner/features/home/data/models/meal_model/meal.dart';
-import 'package:meal_planner/features/home/presentation/view_models/fetch_meal_details_cubit/fetch_meal_details_cubit.dart';
+import 'package:meal_planner/features/home/presentation/cubits/fetch_meal_details_cubit/fetch_meal_details_cubit.dart';
 
 class MealExploreCard extends StatelessWidget {
   const MealExploreCard({super.key, required this.meal, this.iconButton});

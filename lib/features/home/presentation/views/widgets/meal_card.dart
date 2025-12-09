@@ -5,7 +5,7 @@ import 'package:meal_planner/config/app_helper/app_padding.dart';
 import 'package:meal_planner/core/utility/styles.dart';
 import 'package:meal_planner/core/utility/widgets/mealdetailsbottomsheet.dart';
 import 'package:meal_planner/features/home/data/models/meal_model/meal.dart';
-import 'package:meal_planner/features/home/presentation/view_models/fetch_meal_details_cubit/fetch_meal_details_cubit.dart';
+import 'package:meal_planner/features/home/presentation/cubits/fetch_meal_details_cubit/fetch_meal_details_cubit.dart';
 
 class MealCard extends StatelessWidget {
   const MealCard({

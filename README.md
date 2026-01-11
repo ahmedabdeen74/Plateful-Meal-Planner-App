@@ -5,26 +5,26 @@ A comprehensive meal planning application built with Flutter that helps users di
 ## 📱 Screenshots
 
 <p align="center">
-  <img src="assets/app_screen_shots/1" width="220">
-  <img src="assets/app_screen_shots/2" width="220">
-  <img src="assets/app_screen_shots/3" width="220">
-  <img src="assets/app_screen_shots/4" width="220">
-  <img src="assets/app_screen_shots/5" width="220">
-  <img src="assets/app_screen_shots/6" width="220">
-  <img src="assets/app_screen_shots/7" width="220">
-  <img src="assets/app_screen_shots/8" width="220">
-  <img src="assets/app_screen_shots/9" width="220">
-  <img src="assets/app_screen_shots/10" width="220">
-  <img src="assets/app_screen_shots/11" width="220">
-  <img src="assets/app_screen_shots/12" width="220">
-  <img src="assets/app_screen_shots/13" width="220">
-  <img src="assets/app_screen_shots/14" width="220">
-  <img src="assets/app_screen_shots/15" width="220">
-  <img src="assets/app_screen_shots/16" width="220">
-  <img src="assets/app_screen_shots/17" width="220">
-  <img src="assets/app_screen_shots/18" width="220">
-  <img src="assets/app_screen_shots/19" width="220">
-  <img src="assets/app_screen_shots/20" width="220">
+  <img src="assets/app_screen_shots/1.jpeg" width="220">
+  <img src="assets/app_screen_shots/2.jpeg" width="220">
+  <img src="assets/app_screen_shots/3.jpeg" width="220">
+  <img src="assets/app_screen_shots/4.jpeg" width="220">
+  <img src="assets/app_screen_shots/5.jpeg" width="220">
+  <img src="assets/app_screen_shots/6.jpeg" width="220">
+  <img src="assets/app_screen_shots/7.jpeg" width="220">
+  <img src="assets/app_screen_shots/8.jpeg" width="220">
+  <img src="assets/app_screen_shots/9.jpeg" width="220">
+  <img src="assets/app_screen_shots/10.jpeg" width="220">
+  <img src="assets/app_screen_shots/11.jpeg" width="220">
+  <img src="assets/app_screen_shots/12.jpeg" width="220">
+  <img src="assets/app_screen_shots/13.jpeg" width="220">
+  <img src="assets/app_screen_shots/14.jpeg" width="220">
+  <img src="assets/app_screen_shots/15.jpeg" width="220">
+  <img src="assets/app_screen_shots/16.jpeg" width="220">
+  <img src="assets/app_screen_shots/17.jpeg" width="220">
+  <img src="assets/app_screen_shots/18.jpeg" width="220">
+  <img src="assets/app_screen_shots/19.jpeg" width="220">
+  <img src="assets/app_screen_shots/20.jpeg" width="220">
 </p>
 
 

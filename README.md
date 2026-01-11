@@ -1,4 +1,5 @@
 🍽️ Plateful - Meal Planner App
+
 A comprehensive meal planning application built with Flutter that helps users discover, save, and organize their favorite meals. Plateful combines an intuitive UI with powerful features to make meal planning effortless and enjoyable.
 
 ✨ Features

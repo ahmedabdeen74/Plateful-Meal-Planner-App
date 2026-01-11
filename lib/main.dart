@@ -1,8 +1,10 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:meal_planner/constants.dart';
+import 'package:meal_planner/core/utility/app_router.dart';
 
 import 'package:meal_planner/core/utility/di/service_locator.dart';
 import 'package:meal_planner/core/utility/routers/app_router.dart';
@@ -28,7 +30,7 @@ void main() async {
   setupServiceLocator();
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  runApp(const MealPlanner());
+  runApp(ProviderScope(child: const MealPlanner()));
 }
 
 class MealPlanner extends StatelessWidget {

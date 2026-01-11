@@ -6,8 +6,8 @@ import 'package:meal_planner/features/auth/presentation/views/sign_in_view.dart'
 import 'package:meal_planner/features/auth/presentation/views/sign_up_view.dart';
 import 'package:meal_planner/features/calendar/presentation/views/calendar_view.dart';
 import 'package:meal_planner/features/explore/data/repo/explore_repo_impl.dart';
-import 'package:meal_planner/features/explore/presentation/view_models/filter_cubits/fetch_filter_area_cubit.dart' show FetchFilterAreaCubit;
-import 'package:meal_planner/features/explore/presentation/view_models/filter_cubits/fetch_filter_category_cubit.dart';
+import 'package:meal_planner/features/explore/presentation/cubits/filter_cubits/fetch_filter_area_cubit.dart' show FetchFilterAreaCubit;
+import 'package:meal_planner/features/explore/presentation/cubits/filter_cubits/fetch_filter_category_cubit.dart';
 import 'package:meal_planner/features/explore/presentation/views/explore_view.dart';
 import 'package:meal_planner/features/explore/presentation/views/explore_view_details.dart';
 import 'package:meal_planner/features/favourite/presentation/views/favourite_view.dart';
@@ -15,7 +15,7 @@ import 'package:meal_planner/features/home/presentation/views/home_view.dart';
 import 'package:meal_planner/features/search/presentation/views/search_result_view.dart';
 import 'package:meal_planner/features/search/presentation/views/search_view.dart';
 import 'package:meal_planner/features/splash/presentation/views/splash_view.dart';
-
+/*
 class AppRouter {
   static const kAuthView = "/auth_view";
   static const kLoginView = "/login_view";
@@ -135,5 +135,7 @@ class AppRouter {
       builder: (context, state) => const SettingsView(),
     ),
   ]);
+}
+*/
 }
 */

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:meal_planner/core/utility/app_router.dart';
+import 'package:meal_planner/core/utility/routers/app_router.dart';
 import 'package:meal_planner/core/utility/styles.dart';
 import 'package:meal_planner/features/home/data/models/meal_model/meal.dart';
 import 'package:meal_planner/features/home/presentation/cubits/fetch_meal_details_cubit/fetch_meal_details_cubit.dart';

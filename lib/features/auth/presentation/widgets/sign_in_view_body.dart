@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:meal_planner/core/utility/app_router.dart';
 import 'package:meal_planner/core/utility/assets.dart';
+import 'package:meal_planner/core/utility/routers/app_router.dart';
 import 'package:meal_planner/core/utility/styles.dart';
 import 'package:meal_planner/features/auth/data/auth_service.dart';
 import 'package:meal_planner/features/auth/presentation/widgets/sign_in_with_email.dart';
@@ -33,7 +33,8 @@ class _SignInViewBodyState extends State<SignInViewBody> {
   void _validateEmail() {
     setState(() {
       final value = emailController.text.trim();
-      _isEmailValid = value.isNotEmpty &&
+      _isEmailValid =
+          value.isNotEmpty &&
           value.contains('@') &&
           RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(value);
     });
@@ -64,7 +65,12 @@ class _SignInViewBodyState extends State<SignInViewBody> {
           child: Image.asset(AssetsData.authImage, fit: BoxFit.cover),
         ),
         Padding(
-          padding: const EdgeInsets.only(left: 16, right: 16, top: 8, bottom: 16),
+          padding: const EdgeInsets.only(
+            left: 16,
+            right: 16,
+            top: 8,
+            bottom: 16,
+          ),
           child: Form(
             key: _formKey,
             child: Column(
@@ -106,13 +112,18 @@ class _SignInViewBodyState extends State<SignInViewBody> {
                         return 'Email is required';
                       }
                       if (!value.contains('@') ||
-                          !RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(value)) {
+                          !RegExp(
+                            r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$',
+                          ).hasMatch(value)) {
                         return 'Invalid email format';
                       }
                       return null;
                     },
                     decoration: InputDecoration(
-                      contentPadding: EdgeInsets.symmetric(vertical: 12, horizontal: 12),
+                      contentPadding: EdgeInsets.symmetric(
+                        vertical: 12,
+                        horizontal: 12,
+                      ),
                       hintText: 'Email Address',
                       hintStyle: TextStyle(color: Colors.white),
                       prefixIcon: Image.asset(AssetsData.email, width: 30),
@@ -145,13 +156,22 @@ class _SignInViewBodyState extends State<SignInViewBody> {
                       return null;
                     },
                     decoration: InputDecoration(
-                      contentPadding: EdgeInsets.symmetric(vertical: 12, horizontal: 12),
+                      contentPadding: EdgeInsets.symmetric(
+                        vertical: 12,
+                        horizontal: 12,
+                      ),
                       hintText: 'Password',
                       hintStyle: TextStyle(color: Colors.white),
-                      prefixIcon: Image.asset(AssetsData.password, width: 30, height: 30),
+                      prefixIcon: Image.asset(
+                        AssetsData.password,
+                        width: 30,
+                        height: 30,
+                      ),
                       suffixIcon: IconButton(
                         icon: Icon(
-                          _isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+                          _isPasswordVisible
+                              ? Icons.visibility
+                              : Icons.visibility_off,
                           color: Colors.white,
                         ),
                         onPressed: () {
@@ -176,18 +196,26 @@ class _SignInViewBodyState extends State<SignInViewBody> {
                       setState(() {
                         _isLoading = true;
                       });
-                      final result = await _authService.signInWithEmailAndPassword(
-                        emailController.text.trim(),
-                        passwordController.text.trim(),
-                      );
+                      final result = await _authService
+                          .signInWithEmailAndPassword(
+                            emailController.text.trim(),
+                            passwordController.text.trim(),
+                          );
                       setState(() {
                         _isLoading = false;
                       });
                       if (result['user'] != null) {
-                        GoRouter.of(context).pushReplacement(AppRouter.kHomeView);
+                        GoRouter.of(
+                          context,
+                        ).pushReplacement(AppRouter.kHomeView);
                       } else {
                         ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text(result['error'] ?? 'Sign-in failed. Please check your credentials.')),
+                          SnackBar(
+                            content: Text(
+                              result['error'] ??
+                                  'Sign-in failed. Please check your credentials.',
+                            ),
+                          ),
                         );
                       }
                     }

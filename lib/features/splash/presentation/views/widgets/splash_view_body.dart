@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:meal_planner/constants.dart';
+import 'package:meal_planner/core/utility/app_router.dart';
 
 import 'package:meal_planner/core/utility/assets.dart';
 import 'package:meal_planner/core/utility/routers/app_router.dart';
@@ -30,11 +31,11 @@ class _SplashViewBodyState extends State<SplashViewBody> {
     final user = await AuthService().getCurrentUser();
     if (mounted) {
       if (user != null) {
-        AppRouter.toReplacement(AppRouter.kHomeView);
-      //  GoRouter.of(context).replace(AppRouter.kHomeView);
+       // AppRouter.toReplacement(AppRouter.kHomeView);
+        GoRouter.of(context).replace(AppRouter.kHomeView);
       } else {
-        AppRouter.toReplacement(AppRouter.kAuthView);
-      //  GoRouter.of(context).replace(AppRouter.kAuthView);
+      //  AppRouter.toReplacement(AppRouter.kAuthView);
+      GoRouter.of(context).replace(AppRouter.kAuthView);
       }
     }
   }

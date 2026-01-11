@@ -29,6 +29,7 @@ void setupServiceLocator() {
 
   getIt.registerLazySingleton<ExploreRepoImpl>(
       () => ExploreRepoImpl(apiService: getIt<ApiService>()));
+      
 }
 
 /*

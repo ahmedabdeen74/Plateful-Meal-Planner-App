@@ -47,7 +47,7 @@ class _HomeViewState extends State<HomeView> {
               ),
               TextButton(
                 onPressed: () {
-                  AppRouter.pop();
+                 AppRouter.pop();
                   AppRouter.to(AppRouter.kLoginView);
                   // Navigator.pop(context);
                   // GoRouter.of(context).push(AppRouter.kLoginView);

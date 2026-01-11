@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:meal_planner/features/explore/presentation/view_models/filter_cubits/fetch_filter_area_cubit.dart';
-import 'package:meal_planner/features/explore/presentation/view_models/filter_cubits/fetch_filter_category_cubit.dart'
+import 'package:meal_planner/features/explore/presentation/cubits/filter_cubits/fetch_filter_area_cubit.dart';
+import 'package:meal_planner/features/explore/presentation/cubits/filter_cubits/fetch_filter_category_cubit.dart'
     show
         FetchFilterCategoryCubit,
         FetchFilterCategoryState,

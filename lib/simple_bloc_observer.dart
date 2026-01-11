@@ -32,4 +32,9 @@ class SimpleBlocObserver implements BlocObserver {
     debugPrint('transition : $transition');
     // TODO: implement onTransition
   }
+  
+  @override
+  void onDone(Bloc<dynamic, dynamic> bloc, Object? event, [Object? error, StackTrace? stackTrace]) {
+    // TODO: implement onDone
+  }
 }

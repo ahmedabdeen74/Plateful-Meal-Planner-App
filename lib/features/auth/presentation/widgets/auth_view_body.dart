@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:meal_planner/core/utility/app_router.dart';
 import 'package:meal_planner/core/utility/assets.dart';
+import 'package:meal_planner/core/utility/routers/app_router.dart';
 import 'package:meal_planner/core/utility/styles.dart';
 import 'package:meal_planner/features/auth/data/auth_service.dart';
 import 'package:meal_planner/features/auth/presentation/widgets/sign_in_with_email.dart';

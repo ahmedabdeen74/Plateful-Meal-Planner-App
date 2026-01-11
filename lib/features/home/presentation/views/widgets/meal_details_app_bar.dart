@@ -10,6 +10,8 @@ import 'package:meal_planner/features/calendar/data/local/calendar/calendar_stat
 import 'package:meal_planner/features/favourite/data/local/Favourite/add_meal_cubit.dart';
 import 'package:meal_planner/features/home/data/models/meal_model/meal.dart';
 
+import '../../../../../core/utility/routers/app_router.dart';
+
 class MealDetailsAppBar extends StatelessWidget {
   const MealDetailsAppBar({super.key, required this.meal});
   final Meal meal;

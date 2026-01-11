@@ -7,8 +7,8 @@ import 'package:meal_planner/features/auth/presentation/views/sign_in_view.dart'
 import 'package:meal_planner/features/auth/presentation/views/sign_up_view.dart';
 import 'package:meal_planner/features/calendar/presentation/views/calendar_view.dart';
 import 'package:meal_planner/features/explore/data/repo/explore_repo_impl.dart';
-import 'package:meal_planner/features/explore/presentation/view_models/filter_cubits/fetch_filter_area_cubit.dart';
-import 'package:meal_planner/features/explore/presentation/view_models/filter_cubits/fetch_filter_category_cubit.dart';
+import 'package:meal_planner/features/explore/presentation/cubits/filter_cubits/fetch_filter_area_cubit.dart';
+import 'package:meal_planner/features/explore/presentation/cubits/filter_cubits/fetch_filter_category_cubit.dart';
 import 'package:meal_planner/features/explore/presentation/views/explore_view.dart';
 import 'package:meal_planner/features/explore/presentation/views/explore_view_details.dart';
 import 'package:meal_planner/features/favourite/presentation/views/favourite_view.dart';

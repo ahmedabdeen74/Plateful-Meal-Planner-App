@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:meal_planner/core/utility/app_router.dart';
 import 'package:meal_planner/core/utility/area_assets.dart';
 import 'package:meal_planner/core/utility/assets_category.dart';
+import 'package:meal_planner/core/utility/routers/app_router.dart';
 import 'package:meal_planner/core/utility/widgets/shimmer/shimmer_custom_search_result_item.dart';
-import 'package:meal_planner/features/explore/presentation/view_models/fetch_area/fetch_area_cubit.dart';
-import 'package:meal_planner/features/explore/presentation/view_models/fetch_category/fetch_category_cubit.dart';
-import 'package:meal_planner/features/explore/presentation/view_models/filter_cubits/fetch_filter_area_cubit.dart';
-import 'package:meal_planner/features/explore/presentation/view_models/filter_cubits/fetch_filter_category_cubit.dart';
+import 'package:meal_planner/features/explore/presentation/river_pod/explore_repo_provider.dart';
+import 'package:meal_planner/features/explore/presentation/river_pod/fetch_area/fetch_area_state.dart';
+import 'package:meal_planner/features/explore/presentation/river_pod/fetch_category/fetch_category_notifie.dart';
+import 'package:meal_planner/features/explore/presentation/river_pod/fetch_category/fetch_category_state.dart';
 import 'package:meal_planner/features/search/presentation/views/widgets/custom_text_field.dart';
 
-class ExploreViewBody extends StatefulWidget {
+class ExploreViewBody extends ConsumerStatefulWidget {
   const ExploreViewBody({super.key});
 
   @override
-  State<ExploreViewBody> createState() => _ExploreViewBodyState();
+  ConsumerState<ExploreViewBody> createState() => _ExploreViewBodyState();
 }
 
-class _ExploreViewBodyState extends State<ExploreViewBody> {
+class _ExploreViewBodyState extends ConsumerState<ExploreViewBody> {
   TextEditingController _controller = TextEditingController();
   String searchQuery = '';
 
@@ -103,8 +103,10 @@ class _ExploreViewBodyState extends State<ExploreViewBody> {
   */
   @override
   void initState() {
-    context.read<FetchCategoryCubit>().fetchCategory();
-    context.read<FetchAreaCubit>().fetchArea();
+    Future.microtask(() {
+      ref.read(fetchCategoryProvider.notifier).fetchCategory();
+      ref.read(fetchAreaProvider.notifier).fetchArea();
+    });
     super.initState();
   }
 
@@ -198,19 +200,20 @@ class _ExploreViewBodyState extends State<ExploreViewBody> {
                 const SizedBox(height: 32),
 
                 selectedIndex == 0
-                    ? BlocBuilder<FetchCategoryCubit, FetchCategoryState>(
-                        builder: (context, state) {
+                    ? Consumer(
+                        builder: (context, ref, child) {
+                          final state = ref.watch(fetchCategoryProvider);
+
                           if (state is FetchCategoryLoading) {
                             return ListView.builder(
                               shrinkWrap: true,
                               physics: NeverScrollableScrollPhysics(),
                               itemCount: 8,
-                              itemBuilder: (context, index) {
-                                return ShimmerCustomSearchResultItem();
-                              },
+                              itemBuilder: (context, index) =>
+                                  ShimmerCustomSearchResultItem(),
                             );
                           } else if (state is FetchCategoryFailure) {
-                            return Center(child: Text(state.errMessage));
+                            return Center(child: Text(state.message));
                           } else if (state is FetchCategorySuccess) {
                             final categories = state.categories
                                 .where(
@@ -225,64 +228,52 @@ class _ExploreViewBodyState extends State<ExploreViewBody> {
                                 )
                                 .toList();
 
-                            return categories.isEmpty
-                                ? Center(
-                                    child: Text(
-                                      'No categories match your search.',
-                                    ),
-                                  )
-                                : ListView.builder(
-                                    shrinkWrap: true,
-                                    physics:
-                                        const NeverScrollableScrollPhysics(),
-                                    itemCount: categories.length,
-                                    itemBuilder: (context, index) {
-                                      final item = categories[index];
-                                      final categoryName =
-                                          item.strCategory ?? "No Category";
-                                      final imagePath =
-                                          categoryImages[categoryName] ??
-                                          'assets/categories/default.png';
+                            return ListView.builder(
+                              shrinkWrap: true,
+                              physics: NeverScrollableScrollPhysics(),
+                              itemCount: categories.length,
+                              itemBuilder: (context, index) {
+                                final item = categories[index];
+                                final name = item.strCategory!;
+                                final img = categoryImages[name]!;
 
-                                      return GestureDetector(
-                                        onTap: () {
-                                          GoRouter.of(context).push(
-                                            AppRouter.kExploreViewDetails,
-                                            extra: {
-                                              'isCategory': true,
-                                              'name': item.strCategory!,
-                                            },
-                                          );
-                                        },
-                                        child: ListTile(
-                                          leading: ClipOval(
-                                            child: Image.asset(
-                                              imagePath,
-                                              width: 40,
-                                              height: 40,
-                                              fit: BoxFit.cover,
-                                            ),
-                                          ),
-                                          title: Text(categoryName),
-                                        ),
-                                      );
-                                    },
-                                  );
-                          } else {
-                            return const SizedBox.shrink();
+                                return GestureDetector(
+                                  onTap: () {
+                                    AppRouter.to(AppRouter.kExploreViewDetails,
+                                        arguments: {
+                                          'isCategory': true,
+                                          'name': name,
+                                        });
+                                  },
+                                  child: ListTile(
+                                    leading: ClipOval(
+                                      child: Image.asset(
+                                        img,
+                                        width: 40,
+                                        height: 40,
+                                      ),
+                                    ),
+                                    title: Text(name),
+                                  ),
+                                );
+                              },
+                            );
                           }
+
+                          return SizedBox.shrink();
                         },
                       )
-                    : BlocBuilder<FetchAreaCubit, FetchAreaState>(
-                        builder: (context, state) {
+                    : Consumer(
+                        builder: (context, ref, _) {
+                          final state = ref.watch(fetchAreaProvider);
+
                           if (state is FetchAreaLoading) {
                             return ListView.builder(
                               shrinkWrap: true,
                               physics: NeverScrollableScrollPhysics(),
                               itemCount: 8,
-                              itemBuilder: (context, index) {
-                                return ShimmerCustomSearchResultItem();
-                              },
+                              itemBuilder: (context, index) =>
+                                  ShimmerCustomSearchResultItem(),
                             );
                           } else if (state is FetchAreaFailure) {
                             return Center(child: Text(state.errMessage));
@@ -307,8 +298,7 @@ class _ExploreViewBodyState extends State<ExploreViewBody> {
                                   )
                                 : ListView.builder(
                                     shrinkWrap: true,
-                                    physics:
-                                        const NeverScrollableScrollPhysics(),
+                                    physics: NeverScrollableScrollPhysics(),
                                     itemCount: areas.length,
                                     itemBuilder: (context, index) {
                                       final item = areas[index];
@@ -320,13 +310,12 @@ class _ExploreViewBodyState extends State<ExploreViewBody> {
 
                                       return GestureDetector(
                                         onTap: () {
-                                          GoRouter.of(context).push(
-                                            AppRouter.kExploreViewDetails,
-                                            extra: {
-                                              'isCategory': false,
-                                              'name': item.strArea!,
-                                            },
-                                          );
+                                          AppRouter.to(AppRouter.kExploreViewDetails,
+                                        arguments: {
+                                          'isCategory': true,
+                                          'name': item.strArea!,
+                                        });
+                                         
                                         },
                                         child: ListTile(
                                           leading: ClipOval(
@@ -343,7 +332,7 @@ class _ExploreViewBodyState extends State<ExploreViewBody> {
                                     },
                                   );
                           } else {
-                            return const SizedBox.shrink();
+                            return SizedBox.shrink();
                           }
                         },
                       ),

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:meal_planner/core/utility/app_router.dart';
 import 'package:meal_planner/core/utility/assets_generator.dart';
+import 'package:meal_planner/core/utility/routers/app_router.dart';
 import 'package:meal_planner/features/home/data/models/meal_model/meal.dart';
 import 'package:meal_planner/features/home/presentation/cubits/fetch_meal_details_cubit/fetch_meal_details_cubit.dart';
 
@@ -15,7 +16,7 @@ class CustomSearchResultItem extends StatelessWidget {
       onTap: () {
         BlocProvider.of<FetchMealDetailsCubit>(
           context,
-        ).fetchMealDetails(id: meal.idMeal!);
+        ).fetchMealDetails(id: meal.idMeal!);     
         GoRouter.of(
           context,
         ).push(AppRouter.kSearchResultView, extra: meal.strMeal);

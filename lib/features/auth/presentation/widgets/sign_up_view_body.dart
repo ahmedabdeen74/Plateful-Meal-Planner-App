@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:meal_planner/core/utility/app_router.dart';
 import 'package:meal_planner/core/utility/assets.dart';
+import 'package:meal_planner/core/utility/routers/app_router.dart';
 import 'package:meal_planner/core/utility/styles.dart';
 import 'package:meal_planner/features/auth/data/auth_service.dart';
 import 'package:meal_planner/features/auth/presentation/widgets/sign_in_with_email.dart';
@@ -226,7 +225,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                         _isLoading = false;
                       });
                       if (result['user'] != null) {
-                        GoRouter.of(context).pushReplacement(AppRouter.kHomeView);
+                        AppRouter.toReplacement(AppRouter.kHomeView);
                       } else {
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(content: Text(result['error'] ?? 'Sign-up failed. Please check your credentials.')),
@@ -250,7 +249,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                     SizedBox(width: 4),
                     GestureDetector(
                       onTap: () {
-                        GoRouter.of(context).push(AppRouter.kLoginView);
+                        AppRouter.to(AppRouter.kLoginView);
                       },
                       child: Text(
                         "Sign in",

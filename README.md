@@ -240,7 +240,7 @@ Installation
 
 Clone the repository
 
-bashgit clone https://github.com/yourusername/plateful-meal-planner.git
+bashgit clone https://github.com/ahmedabdeen74/Plateful-Meal-Planner-App.git
 cd plateful-meal-planner
 
 Install dependencies

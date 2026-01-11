@@ -2,6 +2,34 @@
 
 A comprehensive meal planning application built with Flutter that helps users discover, save, and organize their favorite meals. Plateful combines an intuitive UI with powerful features to make meal planning effortless and enjoyable.
 
+## 📱 Screenshots
+
+<p align="center">
+  <img src="assets/app_screen_shots/1" width="220">
+  <img src="assets/app_screen_shots/2" width="220">
+  <img src="assets/app_screen_shots/3" width="220">
+  <img src="assets/app_screen_shots/4" width="220">
+  <img src="assets/app_screen_shots/5" width="220">
+  <img src="assets/app_screen_shots/6" width="220">
+  <img src="assets/app_screen_shots/7" width="220">
+  <img src="assets/app_screen_shots/8" width="220">
+  <img src="assets/app_screen_shots/9" width="220">
+  <img src="assets/app_screen_shots/10" width="220">
+  <img src="assets/app_screen_shots/11" width="220">
+  <img src="assets/app_screen_shots/12" width="220">
+  <img src="assets/app_screen_shots/13" width="220">
+  <img src="assets/app_screen_shots/14" width="220">
+  <img src="assets/app_screen_shots/15" width="220">
+  <img src="assets/app_screen_shots/16" width="220">
+  <img src="assets/app_screen_shots/17" width="220">
+  <img src="assets/app_screen_shots/18" width="220">
+  <img src="assets/app_screen_shots/19" width="220">
+  <img src="assets/app_screen_shots/20" width="220">
+</p>
+
+
+
+
 ✨ Features
 
 🏠 Home

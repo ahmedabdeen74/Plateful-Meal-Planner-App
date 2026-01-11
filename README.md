@@ -115,7 +115,9 @@ Error Handling: User-friendly error messages
 Offline Support: Cached data available without internet
 
 🏗️ Architecture
+
 The app follows Clean Architecture principles with clear separation of concerns:
+
 lib/
 ├── config/                # App configuration
 │   └── app_helper/        # Helper utilities
@@ -173,25 +175,33 @@ google_sign_in (^6.2.2): Google authentication
 UI Components
 
 card_swiper (^3.0.1): Swipeable card interface
+
 google_nav_bar (^5.0.6): Bottom navigation bar
+
 shimmer (^3.0.0): Loading skeleton screens
+
 cached_network_image (^3.4.1): Image caching
+
 webview_flutter (^4.10.0): Embedded web content
 
 Media & Files
 
 image_picker (^1.1.2): Pick images from gallery/camera
+
 flutter_image_compress (^2.3.0): Image compression
 
 Utilities
 
 intl (^0.19.0): Internationalization and formatting
+
 dartz (^0.10.1): Functional programming utilities
+
 get_it (^8.0.2): Dependency injection
 
 Code Generation
 
 build_runner (^2.4.13): Build system
+
 hive_generator (^2.0.1): Hive type adapters
 
 📊 Data Flow
@@ -318,10 +328,12 @@ bashflutter pub run build_runner watch
 
 🤝 Contributing
 Contributions are welcome! Please feel free to submit a Pull Request.
+
 👨‍💻 Author
 Ahmed Abdeen
 
 GitHub: ahmedabdeen74
+
 Email: ahmedabdeen1408@gmail.com
 
 🙏 Acknowledgments

@@ -116,27 +116,10 @@ Offline Support: Cached data available without internet
 
 🏗️ Architecture
 
-The app follows Clean Architecture principles with clear separation of concerns:
-
-lib/
-├── config/                # App configuration
-│   └── app_helper/        # Helper utilities
-├── constants.dart         # App-wide constants
-├── core/
-│   ├── network/           # API services and endpoints
-│   ├── utility/           # Utilities, assets, styles
-│   └── widgets/           # Reusable widgets
-└── features/              # Feature modules
-    ├── auth/              # Authentication
-    ├── calendar/          # Meal calendar
-    ├── explore/           # Browse meals
-    ├── favourite/         # Saved meals
-    ├── home/              # Home screen
-    ├── search/            # Search functionality
-    └── splash/            # Splash screen
+The app follows Clean Architecture principles with clear separation of concerns 
 Each feature follows a layered architecture:
 
-Presentation Layer: Widgets, ViewModels (Cubits), States
+Presentation Layer: Widgets, ViewModels (Cubits), States    
 Domain Layer: Use Cases, Repositories (Interfaces)
 Data Layer: Repository Implementations, Data Sources (Remote/Local), Models
 
@@ -144,7 +127,7 @@ Data Layer: Repository Implementations, Data Sources (Remote/Local), Models
 Core
 
 Flutter SDK: Cross-platform mobile framework
-Dart: Programming language
+Dart: Programming language                              
 
 State Management
 
@@ -168,8 +151,11 @@ shared_preferences (^2.3.3): Simple key-value storage
 Firebase
 
 firebase_core (^3.8.1): Firebase initialization
+
 firebase_auth (^5.3.4): User authentication
+
 cloud_firestore (^5.5.2): Cloud database for user data
+
 google_sign_in (^6.2.2): Google authentication
 
 UI Components
@@ -207,34 +193,49 @@ hive_generator (^2.0.1): Hive type adapters
 📊 Data Flow
 Remote Data
 TheMealDB API → ApiService → Remote Data Source → Repository → Use Case → Cubit → UI
+
 Local Data
 Hive Boxes ← → Local Data Source ← → Repository ← → Use Case ← → Cubit ← → UI
 Firebase
+
 Firebase Auth/Firestore ← → AuthService ← → UI
+
 🗄️ Local Storage
+
 Hive Boxes
 
 meal_box: Favorite meals
+
 meal_box_calendar: Scheduled meals
+
 meal_details_box_cache: Cached meal details
+
 meal_box_cache: Cached meal list
 
 SharedPreferences
 
 User session data (username, email)
+
 Recent search history
+
 Profile image (Base64)
 
 🌐 API Integration
+
 TheMealDB API: Free meal database API
 
 Base URL: https://www.themealdb.com/api/json/v1/1/
+
 Endpoints:
 
 Random meals
+
 Search by name
+
 Meal details
+
 Filter by category/area
+
 List all categories/areas
 
 
@@ -242,12 +243,17 @@ List all categories/areas
 🔒 Authentication Flow
 
 Guest Access: Limited features, browse-only mode
+
 Email/Password: Full feature access with account
+
 Google Sign-In: Quick authentication
+
 Profile Management:
 
 Display name
+
 Profile picture (stored in Firestore as Base64)
+
 Email verification
 
 
@@ -255,16 +261,22 @@ Email verification
 🎯 Key Design Patterns
 
 BLoC Pattern: State management
+
 Repository Pattern: Data abstraction
+
 Dependency Injection: GetIt service locator
+
 Clean Architecture: Separation of concerns
+
 SOLID Principles: Maintainable code structure
 
 📦 Dependencies Management
 Dependencies are organized by feature:
 
 Core dependencies: Shared across the app
+
 Feature-specific: Injected only where needed
+
 Dev dependencies: Build tools and generators
 
 🚀 Getting Started

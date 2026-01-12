@@ -224,7 +224,7 @@ Profile image (Base64)
 
 TheMealDB API: Free meal database API
 
-Base URL: https://www.themealdb.com/api/json/v1/1/
+Base URL: https://www.themealdb.com/api.php
 
 Endpoints:
 

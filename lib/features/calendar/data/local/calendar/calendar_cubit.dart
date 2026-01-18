@@ -1,5 +1,4 @@
 import 'package:bloc/bloc.dart';
-import 'package:equatable/equatable.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:meal_planner/constants.dart';
 import 'package:meal_planner/features/calendar/data/local/calendar/calendar_state.dart' show CalendarState, CalendarInitial, CalendarLoading, CalendarFailure, CalendarLoaded, CalendarMealAdded, CalendarMealRemoved;

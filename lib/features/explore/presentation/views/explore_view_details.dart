@@ -1,9 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:meal_planner/core/utility/di/service_locator.dart';
-import 'package:meal_planner/features/explore/data/repo/explore_repo_impl.dart';
-import 'package:meal_planner/features/explore/presentation/cubits/filter_cubits/fetch_filter_area_cubit.dart';
-import 'package:meal_planner/features/explore/presentation/cubits/filter_cubits/fetch_filter_category_cubit.dart';
 import 'package:meal_planner/features/explore/presentation/views/widgets/explore_view_details_body.dart';
 
 class ExploreViewDetails extends StatelessWidget {

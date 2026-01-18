@@ -361,7 +361,7 @@ extension MealExtension on Meal {
       strIngredient18,
       strIngredient19,
       strIngredient20,
-    ].where((item) => item != null && item!.isNotEmpty).map((e) => e!).toList();
+    ].where((item) => item != null && item.isNotEmpty).map((e) => e!).toList();
   }
 
   List<String> getMeasures() {
@@ -386,7 +386,7 @@ extension MealExtension on Meal {
       strMeasure18,
       strMeasure19,
       strMeasure20,
-    ].where((item) => item != null && item!.isNotEmpty).map((e) => e!).toList();
+    ].where((item) => item != null && item.isNotEmpty).map((e) => e!).toList();
   }
 }
 

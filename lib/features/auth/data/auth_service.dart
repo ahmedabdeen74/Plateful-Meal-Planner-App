@@ -185,7 +185,7 @@ class AuthService {
       // Compress image to ensure size is under 1MB
       final compressedFile = await FlutterImageCompress.compressAndGetFile(
         imageFile.path,
-        imageFile.path + '_compressed.jpg',
+        '${imageFile.path}_compressed.jpg',
         quality: 50,
         minWidth: 200,
         minHeight: 200,

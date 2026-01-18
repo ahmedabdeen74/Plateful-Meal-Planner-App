@@ -83,7 +83,7 @@ class MealDetailsAppBar extends StatelessWidget {
                             GestureDetector(
                               onTap: () async {
                                 Navigator.of(context).pop(); // إغلاق القائمة
-                                final user = await AuthService().getCurrentUser();
+                                final user = AuthService().getCurrentUser();
                                 if (user == null) {
                                   _showSignInDialog(context);
                                 } else {
@@ -114,7 +114,7 @@ class MealDetailsAppBar extends StatelessWidget {
                             GestureDetector(
                               onTap: () async {
                                 Navigator.of(context).pop(); // إغلاق القائمة
-                                final user = await AuthService().getCurrentUser();
+                                final user = AuthService().getCurrentUser();
                                 if (user == null) {
                                   _showSignInDialog(context);
                                 } else {

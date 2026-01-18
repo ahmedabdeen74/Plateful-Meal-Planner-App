@@ -1,5 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter/foundation.dart';
 import 'package:meal_planner/core/utility/errors/failures.dart';
 import 'package:meal_planner/features/explore/data/models/area/meal.dart'
     show Meal, AreaMeal;

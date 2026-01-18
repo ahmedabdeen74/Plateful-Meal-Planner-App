@@ -15,7 +15,6 @@ import 'package:meal_planner/features/home/presentation/cubits/fetch_meals_cubit
 final getIt = GetIt.instance;
 
 void injectHome() {
-  // ✅ DataSources
   getIt.registerLazySingleton<HomeLocalDataSource>(
     () => HomeLocalDataSourceImpl(),
   );

@@ -15,7 +15,7 @@ import 'package:meal_planner/features/auth/data/auth_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class CustomAppBar extends StatefulWidget {
-  CustomAppBar({super.key});
+  const CustomAppBar({super.key});
 
   @override
   State<CustomAppBar> createState() => _CustomAppBarState();
@@ -162,7 +162,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
             ),
             GestureDetector(
               onTap: () async {
-                final user = await _authService.getCurrentUser();
+                final user = _authService.getCurrentUser();
                 if (user == null) {
                   showDialog(
                     context: context,

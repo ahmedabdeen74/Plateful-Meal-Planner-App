@@ -28,7 +28,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
   }
 
   void _checkUserStatus() async {
-    final user = await AuthService().getCurrentUser();
+    final user = AuthService().getCurrentUser();
     if (mounted) {
       if (user != null) {
        // AppRouter.toReplacement(AppRouter.kHomeView);

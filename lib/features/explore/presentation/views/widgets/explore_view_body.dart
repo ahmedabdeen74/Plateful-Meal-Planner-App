@@ -19,7 +19,7 @@ class ExploreViewBody extends ConsumerStatefulWidget {
 }
 
 class _ExploreViewBodyState extends ConsumerState<ExploreViewBody> {
-  TextEditingController _controller = TextEditingController();
+  final TextEditingController _controller = TextEditingController();
   String searchQuery = '';
 
   int selectedIndex = 0; // 0 = Categories, 1 = Cuisines

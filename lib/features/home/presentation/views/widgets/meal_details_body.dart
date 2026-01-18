@@ -1,11 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:meal_planner/core/utility/styles.dart';
-import 'package:meal_planner/features/home/presentation/cubits/fetch_meal_details_cubit/fetch_meal_details_cubit.dart';
-import 'package:meal_planner/features/home/presentation/views/widgets/list_view_ingrediant.dart';
-import 'package:meal_planner/features/home/presentation/views/widgets/meal_details_app_bar.dart';
-import 'package:meal_planner/features/home/presentation/views/widgets/meal_details_card.dart';
-import 'package:meal_planner/features/home/presentation/views/widgets/video_instraction.dart';
 
 /*
 class MealDetailsBody extends StatelessWidget {

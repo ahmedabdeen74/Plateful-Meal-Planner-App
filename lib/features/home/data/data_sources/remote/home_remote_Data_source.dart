@@ -1,5 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:dio/dio.dart';
 import 'package:meal_planner/core/network/api_service.dart';
 import 'package:meal_planner/core/network/app_endpoints.dart';
 import 'package:meal_planner/core/utility/errors/failures.dart';

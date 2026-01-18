@@ -6,6 +6,7 @@ import 'package:meal_planner/features/search/presentation/views/widgets/search_v
 
 class SearchMealLoading extends StatelessWidget {
   const SearchMealLoading({super.key});
+  @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(

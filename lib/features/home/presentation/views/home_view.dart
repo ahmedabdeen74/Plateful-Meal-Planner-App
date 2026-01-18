@@ -32,7 +32,7 @@ class _HomeViewState extends State<HomeView> {
   void _onTabChange(int index, BuildContext context) async {
     if (index == 3 || index == 4) {
       // Favourite or Calendar
-      final user = await _authService.getCurrentUser();
+      final user = _authService.getCurrentUser();
       if (user == null) {
         showDialog(
           context: context,

@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:meal_planner/constants.dart';
-import 'package:meal_planner/core/utility/app_router.dart';
 
 import 'package:meal_planner/core/utility/di/service_locator.dart';
 import 'package:meal_planner/core/utility/routers/app_router.dart';
@@ -14,7 +13,6 @@ import 'package:meal_planner/features/favourite/data/local/Favourite/add_meal_cu
 import 'package:meal_planner/features/home/data/models/meal_model/meal.dart';
 import 'package:meal_planner/features/home/presentation/bloc/fetch_meals/fetch_meals_bloc.dart';
 import 'package:meal_planner/features/home/presentation/cubits/fetch_meal_details_cubit/fetch_meal_details_cubit.dart';
-import 'package:meal_planner/features/home/presentation/cubits/fetch_meals_cubit/fetch_meals_cubit.dart';
 import 'package:meal_planner/firebase_options.dart';
 import 'package:meal_planner/simple_bloc_observer.dart';
 

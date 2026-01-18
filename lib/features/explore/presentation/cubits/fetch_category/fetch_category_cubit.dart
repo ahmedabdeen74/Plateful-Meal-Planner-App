@@ -1,6 +1,5 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:meal_planner/features/explore/data/models/area/meal.dart';
 import 'package:meal_planner/features/explore/data/models/category/meal.dart';
 import 'package:meal_planner/features/explore/data/repo/explore_repo.dart';
 
